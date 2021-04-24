@@ -1,0 +1,29 @@
+
+** Shape of the curve expalins a lot for the data, B does look like a persistent time series(natural),
+whereas A looks synthetic and compeletly unnatural for signal1**
+
+Hurst exponent A:0.53303
+Hurst exponent B:0.52087
+Hurst exponent C:0.43018 (when Scale limit was (32, 430))
+
+
+I changed the scale array,for some graphs(A's component went below 0.49)
+The data as you can see, mean , median and mode will do little to nothing to explain the data and
+this increases the importance of fractal analysis, I took only first 700 value in each case because
+it was taking really long to make the graphs, but numbers dont lie, I have checked the DFA algorithm
+and the results produced are correct,(Found this online Hurst value more than one means unsuccesful detrending)
+so the Hurst exponent more than 0.5 suggests persistent behaviour, less than 0.5 suggests synthetic data(unnatural),
+or anti persistent. If a natural looking data(coast line, heartbeat, numpy random walk) is taken then the Hurst exponent
+will rise closer to one.(Criticality), time series which encapsulates
+nature have higher hurst component in fractal analysis.
+
+** Complexity of the classes **
+As we can see Labels A and B, signal 1, has successful detrending, the hurst values in the correct range, changing the
+scale of the DFA had pronounced effect on DFA component, I changed the Scale array multiple times, Signal 1 in label A
+and B had very little effect, I conclude that the DFA was successful and the classes A and B are less complex when
+compared to C.
+class C showed unsuccesful detrending in DFA.
+The Hurst value is out of range for signal 2 for all classes.
+
+
+** Conclusion ** : Classes A and B are not as complex as Class C. I conclude that signal 2 would be unfit for DFA.
